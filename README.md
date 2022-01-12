@@ -174,7 +174,63 @@ type TickerResponse = {
   trace: string;
   message: "OK";
   data: {
-    ticker: TickerData;
+    ticker: {
+      symbol: `${string}_${string}`;
+      last_price: number;
+      quote_volume_24h: number;
+      base_volume_24h: number;
+      high_24h: number;
+      low_24h: number;
+      open_24h: number;
+      close_24h: number;
+      best_ask: number;
+      best_ask_size: number;
+      best_bid: number;
+      best_bid_size: number;
+      fluctuation: number;
+      url: string;
+    };
+  };
+};
+```
+
+### fetchTickers
+
+Ticker is an overview of the market status of a trading pair, including the
+latest trade price, top bid and ask prices and 24-hour trading volume.
+[Docs](https://developer-pro.bitmart.com/en/spot/quotation/ticker.html)
+
+example:
+
+```ts
+import { fetchTickers } from "https://deno.land/x/bitmart@$VERSION/mod.ts";
+await fetchTickers();
+```
+
+returns:
+
+```ts
+type TickersResponse = {
+  code: 1000;
+  trace: string;
+  message: "OK";
+  data: {
+    tickers: {
+      symbol: `${string}_${string}`;
+      last_price: number;
+      quote_volume_24h: number;
+      base_volume_24h: number;
+      high_24h: number;
+      low_24h: number;
+      open_24h: number;
+      close_24h: number;
+      best_ask: number;
+      best_ask_size: number;
+      best_bid: number;
+      best_bid_size: number;
+      fluctuation: number;
+      url: string;
+    }[];
   };
 };
 ```
