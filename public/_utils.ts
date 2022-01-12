@@ -27,3 +27,7 @@ export type SuccessResponse<Data> = {
   message: "OK";
   data: Data;
 };
+
+export function isSnakeCase(value: string): boolean {
+  return /\w+_\w+/.test(value);
+}

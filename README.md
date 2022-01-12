@@ -106,3 +106,41 @@ type SymbolsResponse = {
   };
 };
 ```
+
+### fetchSymbolDetails
+
+Get a detailed list of all trading pairs on the platform.
+[Docs](https://developer-pro.bitmart.com/en/spot/basic/symbols_detail.html)
+
+example:
+
+```ts
+import { fetchSymbolDetails } from "https://deno.land/x/bitmart@$VERSION/mod.ts";
+await fetchSymbolDetails();
+```
+
+returns:
+
+```ts
+type SymbolDetailsResponse = {
+  code: 1000;
+  trace: string;
+  message: "OK";
+  data: {
+    symbols: {
+      symbol: `${string}_${string}`;
+      symbol_id: number;
+      base_currency: string;
+      quote_currency: string;
+      quote_increment: number;
+      base_min_size: number;
+      base_max_size: number;
+      price_min_precision: number;
+      price_max_precision: number;
+      expiration: "NA";
+      min_buy_amount: number;
+      min_sell_amount: number;
+    }[];
+  };
+};
+```

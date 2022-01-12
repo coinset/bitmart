@@ -1,5 +1,6 @@
 import { anyArray, anyString, expect, test } from "../dev_deps.ts";
 import { fetchSymbols } from "./symbols.ts";
+import { isSnakeCase } from "./_utils.ts";
 
 test("fetchSymbols", async () => {
   await expect(fetchSymbols()).resolves.toEqual({
@@ -7,7 +8,7 @@ test("fetchSymbols", async () => {
     trace: anyString(),
     message: "OK",
     data: {
-      symbols: anyArray(anyString((v) => /\w+_\w+/.test(v))),
+      symbols: anyArray(anyString(isSnakeCase)),
     },
   });
 });
