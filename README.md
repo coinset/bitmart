@@ -144,3 +144,37 @@ type SymbolDetailsResponse = {
   };
 };
 ```
+
+### fetchTicker
+
+Ticker is an overview of the market status of a trading pair, including the
+latest trade price, top bid and ask prices and 24-hour trading volume.
+[Docs](https://developer-pro.bitmart.com/en/spot/quotation/ticker.html)
+
+example:
+
+```ts
+import { fetchTicker } from "https://deno.land/x/bitmart@$VERSION/mod.ts";
+await fetchTicker({ symbol: "BTC_USDT" });
+```
+
+parameters:
+
+```ts
+type TickerOptions = {
+  symbol: `${string}_${string}`;
+};
+```
+
+returns:
+
+```ts
+type TickerResponse = {
+  code: 1000;
+  trace: string;
+  message: "OK";
+  data: {
+    ticker: TickerData;
+  };
+};
+```
