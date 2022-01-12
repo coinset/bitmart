@@ -81,3 +81,28 @@ type CurrenciesResponse = {
   };
 };
 ```
+
+### fetchSymbols
+
+Get a list of all trading pairs on the platform.
+[Docs](https://developer-pro.bitmart.com/en/spot/basic/symbols.html)
+
+example:
+
+```ts
+import { fetchSymbols } from "https://deno.land/x/bitmart@$VERSION/mod.ts";
+await fetchSymbols();
+```
+
+returns:
+
+```ts
+type SymbolsResponse = {
+  code: 1000;
+  trace: string;
+  message: "OK";
+  data: {
+    symbols: `${string}_${string}`[];
+  };
+};
+```
