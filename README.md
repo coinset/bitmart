@@ -51,3 +51,33 @@ type ContractResponse = {
   };
 };
 ```
+
+### fetchCurrencies
+
+Get a list of all cryptocurrencies on the platform.
+[Docs](https://developer-pro.bitmart.com/en/spot/basic/currencies.html)
+
+example:
+
+```ts
+import { fetchCurrencies } from "https://deno.land/x/bitmart@$VERSION/mod.ts";
+await fetchCurrencies();
+```
+
+returns:
+
+```ts
+type CurrenciesResponse = {
+  code: 1000;
+  trace: string;
+  message: "OK";
+  data: {
+    currencies: {
+      id: string;
+      name: string;
+      withdraw_enabled: boolean;
+      deposit_enabled: boolean;
+    }[];
+  };
+};
+```
