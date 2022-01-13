@@ -1,3 +1,13 @@
+# [1.0.0-beta.2](https://github.com/coinset/bitmart/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2022-01-13)
+
+
+### Features
+
+* **public:** add public api of `fetchKline` function ([bbc2081](https://github.com/coinset/bitmart/commit/bbc20816dc9b0b0fe3408a3cf685a065c21ed539))
+* **public:** add public api of `fetchKlineSteps` function ([e857513](https://github.com/coinset/bitmart/commit/e8575134bdcbf9479c988f3137299f088bb81fcc))
+* **public:** add public api of `fetchOrderBook` function ([5d669fd](https://github.com/coinset/bitmart/commit/5d669fd237e52d08d85610b0849362d69848b08c))
+* **public:** add public api of `fetchTrades` function ([86ea4e3](https://github.com/coinset/bitmart/commit/86ea4e36bf7e86498083a2f110c8ced67b9d8eec))
+
 # 1.0.0-beta.1 (2022-01-12)
 
 
