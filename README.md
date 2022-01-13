@@ -305,3 +305,50 @@ type KlineResponse = {
   };
 };
 ```
+
+### fetchOrderBook
+
+Get full depth of trading pairs.
+[Docs](https://developer-pro.bitmart.com/en/spot/quotation/depth.html)
+
+example:
+
+```ts
+import { fetchOrderBook } from "https://deno.land/x/bitmart@$VERSION/mod.ts";
+await fetchOrderBook({ symbol: "BTC_USDT" });
+```
+
+parameters:
+
+```ts
+type OrderBookOptions = {
+  symbol: `${string}_${string}`;
+  precision?: string | undefined;
+  size?: number | undefined;
+};
+```
+
+returns:
+
+```ts
+type OrderBookResponse = {
+  code: 1000;
+  trace: string;
+  message: "OK";
+  data: {
+    timestamp: number;
+    buys: {
+      amount: number;
+      total: number;
+      price: number;
+      count: number;
+    }[];
+    sells: {
+      amount: number;
+      total: number;
+      price: number;
+      count: number;
+    }[];
+  };
+};
+```
