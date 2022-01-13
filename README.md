@@ -260,3 +260,48 @@ type KlineStepsResponse = {
   };
 };
 ```
+
+### fetchKline
+
+Get k-line data within a specified time range of a specified trading pair.
+[Docs](https://developer-pro.bitmart.com/en/spot/quotation/kline.html)
+
+example:
+
+```ts
+import { fetchKline } from "https://deno.land/x/bitmart@$VERSION/mod.ts";
+await fetchKline({ symbol: "BTC_USDT", from: 1525760116 to: 1525760117 });
+```
+
+parameters:
+
+```ts
+type KlineOptions = {
+  symbol: `${string}_${string}`;
+  from: number;
+  to: number;
+  step?: number | undefined;
+};
+```
+
+returns:
+
+```ts
+type KlineResponse = {
+  code: 1000;
+  trace: string;
+  message: "OK";
+  data: {
+    kline: {
+      timestamp: number;
+      open: number;
+      high: number;
+      low: number;
+      close: number;
+      last_price: number;
+      volume: number;
+      quote_volume: number;
+    }[];
+  };
+};
+```
