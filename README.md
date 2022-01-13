@@ -234,3 +234,29 @@ type TickersResponse = {
   };
 };
 ```
+
+### fetchKlineSteps
+
+Get all k-line steps supported by the platform, expressed in minutes, minimum 1
+minute.
+[Docs](https://developer-pro.bitmart.com/en/spot/quotation/kline_step.html)
+
+example:
+
+```ts
+import { fetchKlineSteps } from "https://deno.land/x/bitmart@$VERSION/mod.ts";
+await fetchKlineSteps();
+```
+
+returns:
+
+```ts
+type KlineStepsResponse = {
+  code: 1000;
+  trace: string;
+  message: "OK";
+  data: {
+    steps: number[];
+  };
+};
+```
