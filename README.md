@@ -352,3 +352,43 @@ type OrderBookResponse = {
   };
 };
 ```
+
+### fetchTrades
+
+Get the latest trade records of the specified trading pair.
+[Docs](https://developer-pro.bitmart.com/en/spot/quotation/trades.html)
+
+example:
+
+```ts
+import { fetchTrades } from "https://deno.land/x/bitmart@$VERSION/mod.ts";
+await fetchTrades({ symbol: "BTC_USDT" });
+```
+
+parameters:
+
+```ts
+type TradesOptions = {
+  symbol: `${string}_${string}`;
+  n?: number | undefined;
+};
+```
+
+returns:
+
+```ts
+type TradesResponse = {
+  code: 1000;
+  trace: string;
+  message: "OK";
+  data: {
+    trades: {
+      amount: number;
+      order_time: number;
+      price: number;
+      count: number;
+      type: "buy" | "sell";
+    }[];
+  };
+};
+```

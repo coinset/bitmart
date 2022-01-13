@@ -8,3 +8,4 @@ export * from "./tickers.ts";
 export * from "./kline_steps.ts";
 export * from "./kline.ts";
 export * from "./order_book.ts";
+export * from "./trades.ts";
