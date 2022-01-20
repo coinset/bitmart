@@ -1,3 +1,10 @@
+# [1.0.0-beta.3](https://github.com/coinset/bitmart/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2022-01-20)
+
+
+### Bug Fixes
+
+* **public:** change types of response ([5019881](https://github.com/coinset/bitmart/commit/50198811754b65b2c347840cfe26cd340666cda6))
+
 # [1.0.0-beta.2](https://github.com/coinset/bitmart/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2022-01-13)
 
 
