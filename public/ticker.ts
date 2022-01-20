@@ -74,7 +74,7 @@ const reviver: Reviver = (key, value) => {
 };
 
 export type TickerResponse = SuccessResponse<{
-  ticker: TickerData;
+  ticker?: TickerData;
 }>;
 
 /** Ticker is an overview of the market status of a trading pair, including the latest trade price, top bid and ask prices and 24-hour trading volume.
