@@ -40,6 +40,8 @@ export type SymbolDetailsResponse = SuccessResponse<{
 
     /** Maximum order amount */
     min_sell_amount: number;
+
+    trade_status: "trading" | "pre-trade";
   }[];
 }>;
 

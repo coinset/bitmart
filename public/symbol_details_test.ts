@@ -1,4 +1,11 @@
-import { anyArray, anyNumber, anyString, expect, test } from "../dev_deps.ts";
+import {
+  anyArray,
+  anyNumber,
+  anyOf,
+  anyString,
+  expect,
+  test,
+} from "../dev_deps.ts";
 import { fetchSymbolDetails } from "./symbol_details.ts";
 import { isSnakeCase } from "./_utils.ts";
 
@@ -21,6 +28,7 @@ test("fetchSymbolDetails", async () => {
         expiration: "NA",
         min_buy_amount: anyNumber(),
         min_sell_amount: anyNumber(),
+        trade_status: anyOf(["trading", "pre-trade"]),
       }),
     },
   });
